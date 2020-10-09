@@ -1,0 +1,94 @@
+#https://repl.it/student/classrooms/205193
+// Welcome to your first assignment. You've made it to the last part!
+// Add your code here. You can do it!
+
+const input = require('readline-sync');
+
+let r, n, Question = ['True or false: 5000 meters = 5 kilometers.','(5 + 3)/2 * 10 = ?','Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?','Who was the first American woman in space?','What is the minimum crew size for the International Space Station (ISS)?'];  
+let Answer = ['True','40','Trajectory','Sally Ride', '3'];   
+//let Answer = [a1, a2, a3, a4, a5];   
+
+// let matchtable = [];
+// matchtable.push(Question,Answer)
+//let randomindex = Math.floor(Math.random()*Question.length);
+//let randomquestion = Question[randomindex];
+let inputname1 = input.question("Enter your name: ");
+
+//let quest_intro = console.log(`Hello, ${inputname1}! Please answer the question: \n`);
+//quest_intro;
+let grade = [];
+let grade_test =0; //CHECK FROM SAM
+
+console.log(`Hello, ${inputname1}!`);
+ n = Question.slice(0); // clone the array
+ //console.log(n.length);
+r = [];
+
+while (n.length){
+let randomindex = Math.floor(Math.random()*n.length);
+let randomquestion = n[randomindex];
+     r.push(n.splice(randomindex,1));
+ console.log(`\n Please answer RANDOM questions of array : \n`, randomquestion);
+ //r[r.length-1]
+ let inputanswer = input.question(`\t Enter your answer:`);
+//     console.log(r[r.length-1]);
+// console.log(`Hello, ${inputname1}! Please choose the question: \n`, randomquestion);
+
+// for (i = 0; i <Question.length; i++) {
+// console.log(`Hello, ${inputname1}! Please answer the question: \n`, randomquestion);
+// }
+
+if (randomquestion === Question[0] && inputanswer.toUpperCase() === Answer[0].toUpperCase()) 
+//(inputanswer === Answer[4])
+{
+   console.log (`\u001b[32m Your answer is correct, ${inputname1}! \x1b[0m`);
+   grade.push(inputanswer);
+grade_test ++; //+1 from zero
+
+
+
+} else if (randomquestion === Question[1] && inputanswer.toUpperCase() === Answer[1].toUpperCase())
+{
+  console.log (`\u001b[32m Your answer is correct, ${inputname1}!! \x1b[0m`);
+  grade.push(inputanswer);
+  grade_test ++;
+} else if (randomquestion === Question[2] && inputanswer.toUpperCase() === Answer[2].toUpperCase())
+{
+  console.log (`\u001b[32m Your answer is correct, ${inputname1}!! \x1b[0m`);
+  grade.push(inputanswer);
+  grade_test ++;
+}else if (randomquestion === Question[3] && inputanswer.toUpperCase() === Answer[3].toUpperCase())
+{
+  console.log (`\u001b[32m Your answer is correct, ${inputname1}!!! \x1b[0m`);
+  grade.push(inputanswer);
+  grade_test ++;
+}else if (randomquestion === Question[4] && inputanswer.toUpperCase() === Answer[4].toUpperCase())
+{
+  console.log (`\u001b[32m Your answer is correct, ${inputname1}!!!! \x1b[0m`);
+  grade.push(inputanswer);
+  grade_test ++;
+} else
+console.warn (`\x1b[31m I'm sorry, ${inputname1}, your answer is NOT correct.\x1b[0m`);
+
+}
+//console.log(grade);
+let rezultg = Number(grade.length*20);
+let rezultg_test = grade_test/Answer.length*100; //SIMPLE VARIANT from SAM
+
+if (grade.length != 0 && rezultg >= 80) {
+   console.log (` >>> Overall Grade: ${rezultg}% (${grade.length} of 5 responses correct) <<< \n >>> Status: PASSED <<< `);
+}else 
+  console.log (` >>> Overall Grade: ${rezultg}% (${grade.length} of 5 responses correct) <<< \n >>> Status: FAILED <<< `);
+
+console.log(`\u001b[33m CHECK FROM SAM \u001b[33m`);
+if (rezultg_test >= 80) {
+   console.log (` >>> Overall Grade: ${rezultg_test}% (${grade.length} of 5 responses correct) <<< \n >>> Status: PASSED <<< `);
+}else 
+  console.log (` >>> Overall Grade: ${rezultg_test}% (${grade.length} of 5 responses correct) <<< \n >>> Status: FAILED <<< `);
+
+
+
+
+
+//(Number of Correct Answers) / (Number of Questions) * 100
+//console.log (` >>> Overall Grade: 40% (2 of 5 responses correct) <<< \n >>> Status: FAILED <<< `);
