@@ -1,0 +1,27 @@
+const input = require('readline-sync');
+
+let q1 = 'True or false: 5000 meters = 5 kilometers.';
+let q2 = '(5 + 3)/2 * 10 = ?';
+let q3 = 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?';
+let q4 = 'Who was the first American woman in space?';
+let q5 ='What is the minimum crew size for the International Space Station (ISS)?';
+
+let a1 ='True';
+let a2 ='40';
+let a3 ='Trajectory';
+let a4 ='Sally Ride';
+let a5 = '3';
+
+//Redefine your question and correct answer variables to be arrays.
+//Fill these arrays with the questions and answers listed in the table below.
+let Question = [q1, q2, q3, , q4, q5];   
+//let Question = ['True or false: 5000 meters = 5 kilometers.', '(5 + 3)/2 * 10 = ?', 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?', 'Who was the first American woman in space?', 'What is the minimum crew size for the International Space Station (ISS)?'];   
+let Answer = [a1, a2, a3, a4, a5];   
+let randomindex = Math.floor(Math.random()*Question.length);
+let randomquestion = Question[randomindex];
+
+
+let inputname1 = input.question("Enter your name: ");
+console.log(`Hello, ${inputname1}! Please choose the question: \n`, randomquestion);
+let inputanswer = input.question(`Enter your answer:`);
+
